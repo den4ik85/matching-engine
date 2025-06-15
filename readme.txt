@@ -3,7 +3,6 @@ The matching engine is designed to process and manage orders for instruments in 
 It provides functionality for order placement, cancellation, instrument management, event handling, and order matching.
 The system ensures thread-safe execution of commands and validates them using dedicated validators.
 
-<hr></hr>
 Key Features
 
 1. As an entry points we InstrumentController and OrderController which is in real life represented
@@ -62,7 +61,7 @@ Flow:
  - Generate TradeEvent for successful matches.
  - Update order quantities and remove fully filled orders from the book.
 
-<hr></hr>
+
 System Architecture
 Command Execution / Transaction Context
 Component: CommandExecutor
@@ -79,7 +78,6 @@ Flow:
  - Commands for different instruments may be executed concurrently.
 
 
-<hr></hr>
 Main Asynchronous Flows
 1. Command Execution
 Commands are submitted to the CommandExecutor.
@@ -90,13 +88,13 @@ Events are published to the EventBroker.
 The broker processes events asynchronously in FIFO order.
 Events are passed to subscribed components for further handling.
 
-<hr></hr>
+
 Dependencies
 Spring Boot: Provides dependency injection and REST API support.
 Mockito: Used for unit testing and mocking dependencies.
 Lombok: Reduces boilerplate code for models and components.
 
-<hr></hr>
+
 How to Run
 Build the project using Maven and jdk 21:
 mvn clean install
@@ -107,7 +105,7 @@ Use the REST API endpoints to interact with the system:
 /orders/cancel: Cancel an existing order.
 /instruments: Create a new instrument.
 
-<hr></hr>
+
 Future Enhancements
 Order status to handle
  - EXPIRED (for DAY orders of GOOD_TILL_DATE orders),
